@@ -44,7 +44,9 @@ Calling `get_stations()` without any arguments will return a list of all (*curre
 Command-line script
 --------------------
 
-TODO
+The included [`indego_cli.py` script](https://github.com/ericoc/indego-py-lib/blob/master/indego_cli.py) is a fun command-line Python script that I wrote which uses the `Indego` class/library to get the bike share data from the citys API!
+
+![Indego Python Library CLI screenshot](https://raw.githubusercontent.com/ericoc/indego-py-lib/master/cli.png "Indego Python Library CLI screenshot")
 
 
 More Information
