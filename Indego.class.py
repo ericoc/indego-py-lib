@@ -3,6 +3,7 @@
 import requests
 import re
 
+
 """
 Create a class to work with the Philadelphia Indego Bike Share API
 """
@@ -65,14 +66,14 @@ class Indego():
 					# Kiosk IDs are four digits (so far... new stations could break this eventually)
 					# A kiosk ID match only returns that single station immediately
 					# The kioskID from the API is an integer so it has to be compared that way
-					if (len(where) == 4):
-						if (self.stations[station]['kioskId'] == int(where)):
+					if len(where) == 4:
+						if self.stations[station]['kioskId'] == int(where):
 							out[station] = self.stations[station]
 							return out
 
 					# Zip codes are five digits
-					elif (len(where) == 5):
-						if (self.stations[station]['addressZipCode'] == where):
+					elif len(where) == 5:
+						if self.stations[station]['addressZipCode'] == where:
 							out[station] = self.stations[station]
 
 				# Do a regular expression match against the name and address of each station
