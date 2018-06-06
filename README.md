@@ -49,6 +49,18 @@ The included [`indego_cli.py` script](https://github.com/ericoc/indego-py-lib/bl
 ![Indego Python Library CLI screenshot](https://raw.githubusercontent.com/ericoc/indego-py-lib/master/cli.png "Indego Python Library CLI screenshot")
 
 
+AWS Lambda function
+--------------------
+
+The included [`lambda_function.py` script](https://github.com/ericoc/indego-py-lib/blob/master/lambda_function.py) is my first attempt at ever creating an AWS "Lambda function" along with an AWS "API Gateway". It simply returns JSON of the bike-share stations using the `Indego` class that I've written, allowing for searching the stations. For example, see the following requests:
+
+	https://indego.ericoc.com/api/?search=fairmount
+	https://indego.ericoc.com/api/?search=municipal
+	https://indego.ericoc.com/api/?search=3009		# Single kioskID
+	https://indego.ericoc.com/api/?search=19132		# Zip code
+	https://indego.ericoc.com/api/					# All stations
+
+
 More Information
 ----------------
 * [The actual API, a GeoJSON file](https://www.rideindego.com/stations/json/)
