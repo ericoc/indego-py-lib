@@ -52,7 +52,7 @@ class Indego():
 
 		# Just provide all of the stations if no search query was given
 		if not where:
-			return self.stations
+			out = self.stations
 
 		# If a search query was passed, process it...
 		else:
