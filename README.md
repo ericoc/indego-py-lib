@@ -58,7 +58,7 @@ The included [`lambda_function.py` script](https://github.com/ericoc/indego-py-l
 	https://indego.ericoc.com/api/?search=municipal
 	https://indego.ericoc.com/api/?search=3009		# Single kioskID
 	https://indego.ericoc.com/api/?search=19132		# Zip code
-	https://indego.ericoc.com/api/					# All stations
+	https://indego.ericoc.com/api/				# All stations
 
 
 More Information
