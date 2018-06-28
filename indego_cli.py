@@ -5,7 +5,7 @@ import sys
 from pprint import pprint
 
 # Instantiate the Indego class
-indego = Indego();
+indego = Indego()
 
 # Get the stations that were requested if doing a search with a CLI argument
 if len(sys.argv) > 1:

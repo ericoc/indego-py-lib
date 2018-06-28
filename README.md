@@ -21,12 +21,12 @@ When combined with the provided `Indego` class, the following code will generate
 	from indego import Indego
 
 	# Instantiate the Indego class
-	indego = Indego();
+	indego = Indego()
 
 	# Just get "university" stations
-	uni_stations = indego.get_stations('university');
+	uni_stations = indego.get_stations('university')
 
-	print(uni_stations);
+	print(uni_stations)
 
 
 Providing a argument/filter to `get_stations()` to return a list of stations only limits the results within the `Indego` class.

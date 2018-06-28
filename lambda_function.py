@@ -4,7 +4,7 @@ def lambda_handler(event, context):
 	import json
 
 	# Instantiate the Indego class and get all the stations
-	indego = Indego();
+	indego = Indego()
 
 	# Use the ?search query string passed if there was one
 	try:
@@ -13,7 +13,7 @@ def lambda_handler(event, context):
 		search = ''
 
 	# Search for what ever stations were requested
-	stations = indego.get_stations(search);
+	stations = indego.get_stations(search)
 
 	# Return stations if any were found
 	if len(stations) > 0:
