@@ -3,9 +3,9 @@
 from indego import Indego
 
 # Instantiate the Indego class
-indego = Indego();
+indego = Indego()
 
 # Just get "university" stations
-uni_stations = indego.get_stations('university');
+uni_stations = indego.get_stations('university')
 
-print(uni_stations);
+print(uni_stations)
