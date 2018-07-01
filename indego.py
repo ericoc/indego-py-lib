@@ -68,6 +68,7 @@ class Indego():
 					# The kioskID from the API is an integer so it has to be compared that way
 					if len(where) == 4:
 						if self.stations[station]['kioskId'] == int(where):
+							out = {}
 							out[station] = self.stations[station]
 							return out
 
