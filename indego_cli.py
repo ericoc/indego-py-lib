@@ -2,7 +2,6 @@
 
 from indego import Indego
 import sys
-from pprint import pprint
 
 # Instantiate the Indego class
 indego = Indego()
