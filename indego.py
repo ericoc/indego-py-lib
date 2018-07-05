@@ -58,6 +58,7 @@ class Indego():
 		else:
 
 			# Loop through each station in the primary dictionary
+			where = str(where)
 			for station in self.stations:
 
 				# If the search query is numeric, it could either be a zip code or a kiosk ID
