@@ -18,47 +18,46 @@ Example
 
 When combined with the provided `Indego` class, the following code will generate the example output in the next section:
 
-	from indego import Indego
+    from indego import Indego
 
-	# Instantiate the Indego class
-	indego = Indego()
+    # Instantiate the Indego class
+    indego = Indego()
 
-	# Just get "university" stations
-	uni_stations = indego.get_stations('university')
+    # Just get "university" stations
+    uni_stations = indego.get_stations('university')
 
-	print(uni_stations)
+    print(uni_stations)
 
 
 Providing a argument/filter to `get_stations()` to return a list of stations only limits the results within the `Indego` class.
 
 Unfortunately, there does not appear to be a signifcant amount of documentation for the API being used nor does there seem to be any parameters available to limit the stations being retrieved from the API.
 
-Calling `get_stations()` without any arguments will return a list of all (*currently*, 123) stations!
+Calling `get_stations()` without any arguments will return a list of all (*currently*, 132) stations!
 
 ### Output
 
-	$ python3 example.py
-	{3008: {'addressStreet': '1076 Berks Street', 'addressCity': 'Philadelphia', 'addressState': 'PA', 'addressZipCode': '19122', 'bikesAvailable': 1, 'closeTime': '23:58:00', 'docksAvailable': 18, 'eventEnd': None, 'eventStart': None, 'isEventBased': False, 'isVirtual': False, 'isVisible': False, 'kioskId': 3008, 'kioskPublicStatus': 'Active', 'kioskStatus': 'Full Service', 'name': 'Temple University Station', 'notes': None, 'openTime': '00:02:00', 'publicText': '', 'timeZone': 'Eastern Standard Time', 'totalDocks': 19, 'trikesAvailable': 0, 'kioskConnectionStatus': 'Active', 'kioskType': 1, 'latitude': 39.98078, 'longitude': -75.15055, 'hasGeofence': False, 'classicBikesAvailable': 1, 'smartBikesAvailable': 0}, 3020: {'addressStreet': '3051 South St.', 'addressCity': 'Philadelphia', 'addressState': 'PA', 'addressZipCode': '19147', 'bikesAvailable': 0, 'closeTime': '23:58:00', 'docksAvailable': 35, 'eventEnd': None, 'eventStart': None, 'isEventBased': False, 'isVirtual': False, 'isVisible': False, 'kioskId': 3020, 'kioskPublicStatus': 'Active', 'kioskStatus': 'Full Service', 'name': 'University City Station', 'notes': None, 'openTime': '00:02:00', 'publicText': '', 'timeZone': 'Eastern Standard Time', 'totalDocks': 35, 'trikesAvailable': 0, 'kioskConnectionStatus': 'Active', 'kioskType': 1, 'latitude': 39.94922, 'longitude': -75.19036, 'hasGeofence': False, 'classicBikesAvailable': 0, 'smartBikesAvailable': 0}}
-
+    $ python3 example.py
+    {3008: {'addressStreet': '1076 Berks Street', 'addressCity': 'Philadelphia', 'addressState': 'PA', 'addressZipCode': '19122', 'bikesAvailable': 5, 'closeTime': '03:55:00', 'docksAvailable': 14, 'eventEnd': None, 'eventStart': None, 'isEventBased': False, 'isVirtual': False, 'isVisible': False, 'kioskId': 3008, 'kioskPublicStatus': 'Active', 'kioskStatus': 'FullService', 'name': 'Temple University Station', 'notes': None, 'openTime': '04:00:00', 'publicText': '', 'timeZone': 'Eastern Standard Time', 'totalDocks': 19, 'trikesAvailable': 0, 'kioskConnectionStatus': 'Active', 'kioskType': 1, 'latitude': 39.98078, 'longitude': -75.15055, 'hasGeofence': False, 'classicBikesAvailable': 5, 'smartBikesAvailable': 0, 'electricBikesAvailable': 0, 'isArchived': False}, 3020: {'addressStreet': '3051 South St.', 'addressCity': 'Philadelphia', 'addressState': 'PA', 'addressZipCode': '19147', 'bikesAvailable': 6, 'closeTime': '03:55:00', 'docksAvailable': 29, 'eventEnd': None, 'eventStart': None, 'isEventBased': False, 'isVirtual': False, 'isVisible': False, 'kioskId': 3020, 'kioskPublicStatus': 'Active', 'kioskStatus': 'FullService', 'name': 'University City Station', 'notes': None, 'openTime': '04:00:00', 'publicText': '', 'timeZone': 'Eastern Standard Time', 'totalDocks': 35, 'trikesAvailable': 0, 'kioskConnectionStatus': 'Active', 'kioskType': 1, 'latitude': 39.94922, 'longitude': -75.19036, 'hasGeofence': False, 'classicBikesAvailable': 6, 'smartBikesAvailable': 0, 'electricBikesAvailable': 0, 'isArchived': False}}
 
 Command-line script
 --------------------
 
-The included [`indego_cli.py` script](https://github.com/ericoc/indego-py-lib/blob/master/indego_cli.py) is a fun command-line Python script that I wrote which uses the `Indego` class/library to get the bike share data from the citys API!
+The included [`indego_cli.py` script](indego_cli.py) is a fun command-line Python script that I wrote which uses the `Indego` class/library to get the bike share data from the API!
 
-![Indego Python Library CLI screenshot](https://raw.githubusercontent.com/ericoc/indego-py-lib/master/cli.png "Indego Python Library CLI screenshot")
+![Indego Python Library CLI screenshot](cli.png "Indego Python Library CLI screenshot")
 
 
 AWS Lambda function
 --------------------
 
-The included [`lambda_function.py` script](https://github.com/ericoc/indego-py-lib/blob/master/lambda_function.py) is my first attempt at ever creating an AWS "Lambda function" along with an AWS "API Gateway". It simply returns JSON of the bike-share stations using the `Indego` class that I've written, allowing for searching the stations. For example, see the following requests:
+The included [`lambda_function.py` script](lambda_function.py) is my first attempt at ever creating an AWS "Lambda function" along with an AWS "API Gateway". It simply returns JSON of the bike-share stations using the `Indego` class that I've written, allowing for searching the stations. For example, see the following requests:
 
-	https://indego.ericoc.com/api/?search=fairmount
-	https://indego.ericoc.com/api/?search=municipal
-	https://indego.ericoc.com/api/?search=3009		# Single kioskID
-	https://indego.ericoc.com/api/?search=19132		# Zip code
-	https://indego.ericoc.com/api/				# All stations
+    https://indego.ericoc.com/api/?search=fairmount
+    https://indego.ericoc.com/api/?search=municipal
+    https://indego.ericoc.com/api/?search=3009      # Single kioskID
+    https://indego.ericoc.com/api/?search=19132     # Zip code
+    https://indego.ericoc.com/api/                  # All stations
 
 
 More Information
