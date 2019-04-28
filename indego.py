@@ -41,7 +41,7 @@ class Indego():
 
 
     """Create a function to search for and return stations"""
-    def get_stations(self, where):
+    def get_stations(self, where=None):
 
         # Find all of the stations first, if that has not already been done
         if not self.initialized:
