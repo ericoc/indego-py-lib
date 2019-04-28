@@ -12,7 +12,7 @@ if len(sys.argv) > 1:
 
 # Otherwise, get all stations
 else:
-    search = ''
+    search = None
 
 # Get stations
 stations = indego.get_stations(search)
@@ -38,7 +38,7 @@ for station in stations:
         graph += '='
 
     # Pad the graph with spaces to line stuff up and color code the bikes (#) vs. docks (=) graphs that we just built
-    graph = graph.ljust(42)
+    graph = graph.ljust(60)
     graph = graph.replace('#', '\x1b[32m#\x1b[0m')    # Bikes are green
     graph = graph.replace('=', '\x1b[31m=\x1b[0m')    # Docks are red
     print(graph, end='')
