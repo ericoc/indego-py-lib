@@ -1,5 +1,5 @@
 Indego Bike Share Python Library
-==============================
+================================
 
 
 About
@@ -29,27 +29,33 @@ Please note that this library is only compatible with Python 3+. Python 2 is not
 Example
 -------
 
-When combined with the provided `Indego` class, the following code will generate the example output in the next section:
+When combined with the provided `Indego` class, the following code will generate the example output:
 
     from indego import Indego
 
     # Instantiate the Indego class
     indego = Indego()
 
-    # Just get "university" stations
+    # Retrieve and print "university" stations
     uni_stations = indego.get_stations('university')
-
     print(uni_stations)
 
+    # Show how many stations were returned above
+    uni_count = len(uni_stations)
+    print(uni_count, 'stations returned')
 
-Providing a argument/filter to `get_stations()` to return a list of stations only limits the results within the `Indego` class.
+Output:
+
+    $ python3 university_example.py
+    {3008: {'addressStreet': '1076 Berks Street', 'addressCity': 'Philadelphia', 'addressState': 'PA', 'addressZipCode': '19122', 'bikesAvailable': 3, 'closeTime': '03:55:00', 'docksAvailable': 16, 'eventEnd': None, 'eventStart': None, 'isEventBased': False, 'isVirtual': False, 'isVisible': False, 'kioskId': 3008, 'kioskPublicStatus': 'Active', 'kioskStatus': 'FullService', 'name': 'Temple University Station', 'notes': None, 'openTime': '04:00:00', 'publicText': '', 'timeZone': 'Eastern Standard Time', 'totalDocks': 19, 'trikesAvailable': 0, 'kioskConnectionStatus': 'Active', 'kioskType': 1, 'latitude': 39.98078, 'longitude': -75.15055, 'hasGeofence': False, 'classicBikesAvailable': 3, 'smartBikesAvailable': 0, 'electricBikesAvailable': 0, 'isArchived': False}, 3020: {'addressStreet': '3051 South St.', 'addressCity': 'Philadelphia', 'addressState': 'PA', 'addressZipCode': '19147', 'bikesAvailable': 11, 'closeTime': '03:55:00', 'docksAvailable': 24, 'eventEnd': None, 'eventStart': None, 'isEventBased': False, 'isVirtual': False, 'isVisible': False, 'kioskId': 3020, 'kioskPublicStatus': 'Active', 'kioskStatus': 'FullService', 'name': 'University City Station', 'notes': None, 'openTime': '04:00:00', 'publicText': '', 'timeZone': 'Eastern Standard Time', 'totalDocks': 35, 'trikesAvailable': 0, 'kioskConnectionStatus': 'Active', 'kioskType': 1, 'latitude': 39.94922, 'longitude': -75.19036, 'hasGeofence': False, 'classicBikesAvailable': 11, 'smartBikesAvailable': 0, 'electricBikesAvailable': 0, 'isArchived': False}}
+    2 stations returned
+
+
+Providing a argument/filter to `get_stations()` to limit the selection of stations only limits the results within the `Indego` class. The API end-point itself always returns all stations.
 
 Unfortunately, there does not appear to be a signifcant amount of documentation for the API being used nor does there seem to be any parameters available to limit the stations being retrieved from the API.
 
-Calling `get_stations()` without any arguments will return a list of all (*currently*, 132) stations:
-
-    $ python3 example.py
-    {3008: {'addressStreet': '1076 Berks Street', 'addressCity': 'Philadelphia', 'addressState': 'PA', 'addressZipCode': '19122', 'bikesAvailable': 5, 'closeTime': '03:55:00', 'docksAvailable': 14, 'eventEnd': None, 'eventStart': None, 'isEventBased': False, 'isVirtual': False, 'isVisible': False, 'kioskId': 3008, 'kioskPublicStatus': 'Active', 'kioskStatus': 'FullService', 'name': 'Temple University Station', 'notes': None, 'openTime': '04:00:00', 'publicText': '', 'timeZone': 'Eastern Standard Time', 'totalDocks': 19, 'trikesAvailable': 0, 'kioskConnectionStatus': 'Active', 'kioskType': 1, 'latitude': 39.98078, 'longitude': -75.15055, 'hasGeofence': False, 'classicBikesAvailable': 5, 'smartBikesAvailable': 0, 'electricBikesAvailable': 0, 'isArchived': False}, 3020: {'addressStreet': '3051 South St.', 'addressCity': 'Philadelphia', 'addressState': 'PA', 'addressZipCode': '19147', 'bikesAvailable': 6, 'closeTime': '03:55:00', 'docksAvailable': 29, 'eventEnd': None, 'eventStart': None, 'isEventBased': False, 'isVirtual': False, 'isVisible': False, 'kioskId': 3020, 'kioskPublicStatus': 'Active', 'kioskStatus': 'FullService', 'name': 'University City Station', 'notes': None, 'openTime': '04:00:00', 'publicText': '', 'timeZone': 'Eastern Standard Time', 'totalDocks': 35, 'trikesAvailable': 0, 'kioskConnectionStatus': 'Active', 'kioskType': 1, 'latitude': 39.94922, 'longitude': -75.19036, 'hasGeofence': False, 'classicBikesAvailable': 6, 'smartBikesAvailable': 0, 'electricBikesAvailable': 0, 'isArchived': False}}
+Calling `get_stations()` without any arguments will return a list of all (*currently*, 132) stations.
 
 
 More Information

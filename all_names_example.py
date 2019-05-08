@@ -1,13 +1,11 @@
-#!/usr/bin/env python3
-
 from indego import Indego
 
 # Instantiate the Indego class
 indego = Indego()
 
 # Just get all stations
-stations = indego.get_stations()
+all_stations = indego.get_stations()
 
 # This will print each of the stations names
-for station in stations.values():
+for station in all_stations.values():
     print(station['name'])
