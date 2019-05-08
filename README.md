@@ -1,6 +1,7 @@
 Indego Bike Share Python Library
 ==============================
 
+
 About
 -----
 
@@ -9,6 +10,20 @@ I have tried to make a re-usable Python library for the Philadelphia Indego Bike
 I wrote this similarly to [my existing Indego PHP library](https://github.com/ericoc/indego-php-lib).
 
 Check out [the City of Philadelphia GitHub](https://github.com/CityOfPhiladelphia) if you think this library is interesting!
+
+
+Installation
+------------
+
+Installation of this library should be as simple as running:
+
+    pip install indego
+
+
+Compatibility
+-------------
+
+Please note that this library is only compatible with Python 3+. Python 2 is not supported.
 
 
 Example
