@@ -51,7 +51,7 @@ Output:
     2 stations returned
 
 
-Providing a argument/filter to `get_stations()` to limit the selection of stations only limits the results within the `Indego` class. The API end-point itself always returns all stations.
+Providing an argument/filter to `get_stations()` to limit the selection of stations only limits the results within the `Indego` class. The API end-point itself always returns all stations.
 
 Unfortunately, there does not appear to be a signifcant amount of documentation for the API being used nor does there seem to be any parameters available to limit the stations being retrieved from the API.
 
