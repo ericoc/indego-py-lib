@@ -1,4 +1,6 @@
-.idea
-.DS_Store
+.*
+!.gitignore
+dist/
 __pycache__
 *.pyc
+*.egg-info/
