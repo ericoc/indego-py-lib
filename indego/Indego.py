@@ -49,23 +49,23 @@ class Indego(object):
         out = {}
 
         # Loop through eery station that was found by the API
-        for station in self.stations:
+        for station_id, station in self.stations.items():
 
             # If the search query is numeric, it could either be a zip code or a kiosk ID
             if where.isdigit():
 
                 # Kiosk IDs are four digits (so far... new stations could break this eventually)
                 # A kiosk ID match only returns that single station immediately
-                if len(where) == 4 and self.stations[station]['kioskId'] == int(where):
-                    return { station : self.stations[station] }
+                if len(where) == 4 and station_id == int(where):
+                    return { station_id : station }
 
                 # Zip codes are five digits
-                if len(where) == 5 and self.stations[station]['addressZipCode'] == where:
-                    out[station] = self.stations[station]
+                if len(where) == 5 and station['addressZipCode'] == where:
+                    out[station_id] = station
 
             # Do a regular expression match against the name and address of each station
-            if (re.search(where, self.stations[station]['addressStreet'], re.IGNORECASE)) or (re.search(where, self.stations[station]['name'], re.IGNORECASE)):
-                out[station] = self.stations[station]
+            if (re.search(where, station['addressStreet'], re.IGNORECASE)) or (re.search(where, station['name'], re.IGNORECASE)):
+                out[station_id] = station
 
         # Return the limited set of stations that were found by the search query
         return out
