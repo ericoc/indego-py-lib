@@ -8,14 +8,12 @@ Create a class to work with the Philadelphia Indego Bike Share API
 class Indego(object):
 
 
-    """Create an init function to run upon instantiation of the class"""
+    """Trigger function to find all Indego stations upon instantiation of the class"""
     def __init__(self):
-
-        # Create an empty dictionary to fill in with station data
-        self.stations = {}
+        self.__find_stations()
 
 
-    """Create a function to hit the API and find all of the stations"""
+    """Define a function to hit the API and find all of the Indego stations from the API"""
     def __find_stations(self):
 
         # Specify the Indego API URL, a friendly user-agent, and custom headers to use in the HTTP request
@@ -29,11 +27,12 @@ class Indego(object):
         json = data.json()
 
         # Add each station to our own dictionary that is easier to work with
+        self.stations = {}
         for station in json['features']:
             self.stations[station['properties']['kioskId']] = station['properties']
 
 
-    """Create a function to search for and return stations"""
+    """Define a function to search for and return stations from our larger dictionary which contains all stations from the Indego API"""
     def get_stations(self, where=None):
 
         # Find all of the stations first, if that has not already been done
