@@ -5,12 +5,13 @@ Indego Bike Share Python Library
 About
 -----
 
-I have tried to make a re-usable Python library for the Philadelphia Indego Bike Share API! I'm not very familiar with Python, but tried to learn by creating this.
+I have tried to make a re-usable Python library for the Philadelphia Indego Bike Share API!
 
 I wrote this similarly to [my existing Indego PHP library](https://github.com/ericoc/indego-php-lib).
 
 Check out [the City of Philadelphia GitHub](https://github.com/CityOfPhiladelphia) if you think this library is interesting!
 
+I created [indego.ericoc.com](https://indego.ericoc.com/) ([source code](https://github.com/ericoc/indego.ericoc.com)) using this library as well
 
 Installation
 ------------
