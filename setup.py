@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="indego",
-    version="1.1.0",
+    version="1.1.1",
     author="Eric O'Callaghan",
     author_email="eric@ericoc.com",
     description="Python3 library for working with the Philadelphia Indego Bike Share API",
